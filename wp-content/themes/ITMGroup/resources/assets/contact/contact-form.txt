@@ -1,0 +1,26 @@
+<div class="inputHolder">
+   <label for="your-name">Nombre Completo*</label>
+   [text* your-name autocomplete:name class:input placeholder "Ingresa tu nombre"]
+</div>
+
+<div class="inputHolder half">
+   <label for="your-email">Correo Electrónico*</label>
+   [email* your-email autocomplete:email class:input placeholder "Ingresa tu correo"]
+</div>
+
+<div class="inputHolder half">
+   <label for="your-tel">Teléfono*</label>
+   [tel* your-tel autocomplete:tel class:input placeholder "Ingresa tu teléfono"]
+</div>
+
+<div class="inputHolder half">
+   <label for="your-city">Ciudad*</label>
+   [text* your-city autocomplete:city class:input placeholder "Ingresa tu ciudad"]
+</div>
+
+<div class="inputHolder">
+   <label for="your-email">Comentarios*</label>
+   [textarea your-message class:input placeholder "Escribe un mensaje"]
+</div>
+
+<button type="submit" class="button" style="width:100%" >Enviar</button>

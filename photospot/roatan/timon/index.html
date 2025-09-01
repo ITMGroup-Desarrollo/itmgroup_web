@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Etiqueta de Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ECT7H7JR2W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-ECT7H7JR2W'); 
+
+    // Función para redirigir después de enviar el evento a GA4
+    function redirectToInstagram() {
+      gtag('event', 'qr_redirect_photospot_roatan_timon', {
+        'event_category': 'social',
+        'event_label': 'instagram_port_roatan_timon'
+      });
+      
+      setTimeout(function() {
+        window.location.href = "https://www.instagram.com/portroatan";
+      }, 500);
+    }
+  </script>
+</head>
+<body onload="redirectToInstagram()">
+</body>
+</html>

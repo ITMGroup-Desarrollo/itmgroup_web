@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Video Player</title>
+  <style>
+    html, body {
+      margin: 0; padding: 0; height: 100%;
+      background: #000;
+    }
+    body {
+      display: flex; align-items: center; justify-content: center;
+    }
+    video {
+      max-width: 80vw; max-height: 80vh; /* ocupa ~mitad de la pantalla */
+      border-radius: 10px; box-shadow: 0 0 30px rgba(0,0,0,.7);
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <video
+    id="heroVideo"
+    src="promo-nadia.mp4"
+    autoplay
+    muted
+    playsinline
+    webkit-playsinline
+    loop
+    controls
+    preload="auto"
+  >
+    Tu navegador no soporta la etiqueta video.
+  </video>
+
+  <script>
+    const v = document.getElementById('heroVideo');
+    // asegurar mute desde JS (algunos navegadores lo exigen antes de play)
+    v.muted = true;
+    v.defaultMuted = true;
+
+    // intentar reproducir de inmediato
+    v.play().catch(() => {
+      // si el navegador bloquea, reproducir al primer gesto del usuario
+      const resume = () => {
+        v.play().finally(() => {
+          window.removeEventListener('click', resume);
+          window.removeEventListener('touchstart', resume);
+        });
+      };
+      window.addEventListener('click', resume, { once: true });
+      window.addEventListener('touchstart', resume, { once: true });
+    });
+  </script>
+</body>
+</html>
