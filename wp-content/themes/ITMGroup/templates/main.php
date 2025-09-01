@@ -9,9 +9,9 @@
 
   get_header();
   
-  // if(isset($_GET['qr'])){
-  //  get_template_part('/components/pdfPopUp');
-  // }
+  
+  get_template_part('/components/popUpRevista');
+  
 
   get_template_part('/components/mainBanner');
 
